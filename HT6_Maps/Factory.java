@@ -4,7 +4,7 @@ import java.util.TreeMap;
 import java.util.LinkedHashMap;
 
 public class Factory {
-    public static Map<String, String> createMap(String type) {
+    public static Map<Integer, Producto> createMap(String type) {
         switch(type.toLowerCase()) {
             case "1":
                 return new HashMap<>();
