@@ -1,16 +1,21 @@
+/**
+ * @author: Diego Duarte
+ * 
+ * @since:05/03/2023
+ **/ 
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
-
-import javax.xml.parsers.FactoryConfigurationError;
 
 public class Read {
 
+    
+    /** 
+     * @param mapType
+     * @return Map<Integer, Producto>
+     */
     public Map<Integer, Producto> read(String mapType) {
         try {
             File file = new File("ListadoProducto (2).txt");

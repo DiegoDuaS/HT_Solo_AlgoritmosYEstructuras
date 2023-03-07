@@ -1,11 +1,10 @@
-import java.beans.PropertyDescriptor;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+/**
+ * @author: Diego Duarte
+ * 
+ * @since:06/03/2023
+ **/
 import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
 
-import javax.lang.model.util.ElementScanner14;
 
 public class Controller {
     Read read = new Read();
@@ -95,6 +94,12 @@ public class Controller {
         
     }
 
+    
+    /** 
+     * @param Mapita
+     * @param nombre
+     * @return boolean
+     */
     public boolean IsInCarrito(Map<Integer, Producto> Mapita, String nombre) {
         for (Producto producto : Mapita.values()) {
             if (producto.getNombre().equals(nombre)) {
