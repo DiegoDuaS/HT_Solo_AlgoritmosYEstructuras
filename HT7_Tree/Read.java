@@ -1,3 +1,8 @@
+/**
+ * @author: Diego Duarte
+ * 
+ * @since:25/03/2023
+ **/
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,6 +21,10 @@ public class Read {
     };
     
 
+    
+    /** 
+     * @return PriorityQueue<Association<String, ArrayList<String>>>
+     */
     public static PriorityQueue<Association<String, ArrayList<String>>> read() {
         PriorityQueue<Association<String, ArrayList<String>>> result = new PriorityQueue<>(comparador);
     
@@ -38,6 +47,11 @@ public class Read {
         return result;
     }
 
+    
+    /** 
+     * @return ArrayList<String>
+     * @throws FileNotFoundException
+     */
     public ArrayList<String> readWords() throws FileNotFoundException {
         File file = new File("texto.txt");
         Scanner scanner = new Scanner(file);

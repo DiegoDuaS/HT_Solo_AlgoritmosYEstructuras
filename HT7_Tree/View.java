@@ -10,12 +10,20 @@ import java.util.Scanner;
 public class View {
     Scanner sc = new Scanner(System.in);
 
+    
+    /** 
+     * @return String
+     */
     public String MenuPrincipal(){
         System.out.println(" ***DICCIONARIO***\n¿Qué desea hacer? \n 1 Ver palabras \n 2 Traducir texto en archivo 'texto.txt' \n 3 Salir");
         String res = sc.next();
         return res;
     }
 
+    
+    /** 
+     * @param tree
+     */
     public void Palabras(PriorityQueue<Association<String,ArrayList<String>>> tree){
         for (Association<String, ArrayList<String>> info : tree) {
             System.out.println("Ingles: " + info.getKey());
@@ -25,12 +33,20 @@ public class View {
         }
     }
 
+    
+    /** 
+     * @return String
+     */
     public String IdiomaOriginal(){
         System.out.println("¿En que idioma se encuentra el texto en el archivo 'texto.txt'? \n 1 Ingles \n 2 Español \n 3 Frances");
         String res = sc.next();
         return res;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String IdiomaTraducir(){
         System.out.println("¿A que idioma desea traducir el texto? \n 1 Ingles \n 2 Español \n 3 Frances");
         String res = sc.next();
@@ -45,11 +61,16 @@ public class View {
         System.out.println("Gracias por usar el diccionario");
     }
 
+    
+    /** 
+     * @param Traduccion
+     * @param Original
+     */
     public void ImprimirMensajes(String Traduccion, ArrayList<String> Original){
-        System.out.println("Mensaje Original:");
+        System.out.println("\nMensaje Original:");
         for(int i = 0; i < Original.size(); i++){ 
             System.out.print(Original.get(i) + " ");
         }
-        System.out.println("\nMensaje Traducido: \n" + Traduccion);
+        System.out.println("\nMensaje Traducido: \n" + Traduccion + "\n");
     }
 }

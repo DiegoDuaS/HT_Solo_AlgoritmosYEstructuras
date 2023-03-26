@@ -1,3 +1,8 @@
+/**
+ * @author: Diego Duarte
+ * 
+ * @since:25/03/2023
+ **/
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.FormatFlagsConversionMismatchException;
@@ -9,11 +14,19 @@ public class Controller{
     View view = new View();
     boolean seguir = true;
 
+    
+    /** 
+     * @return PriorityQueue<Association<String, ArrayList<String>>>
+     */
     public PriorityQueue<Association<String,ArrayList<String>>> CrearDiccionario(){
         PriorityQueue<Association<String,ArrayList<String>>> nuevo = read.read();
         return nuevo;
     }
 
+    
+    /** 
+     * @throws FileNotFoundException
+     */
     public void work() throws FileNotFoundException{
         tree = CrearDiccionario();
         while(seguir == true){
@@ -39,6 +52,14 @@ public class Controller{
         }
     }
 
+    
+    /** 
+     * @param O
+     * @param T
+     * @param tree
+     * @param texto
+     * @return String
+     */
     public String Traducir(String O, String T, PriorityQueue<Association<String,ArrayList<String>>> tree, ArrayList<String> texto){
         StringBuilder mientras = new StringBuilder();
         String traduccion = " ";
