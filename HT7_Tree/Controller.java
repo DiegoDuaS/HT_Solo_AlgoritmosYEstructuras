@@ -42,6 +42,7 @@ public class Controller{
     public String Traducir(String O, String T, PriorityQueue<Association<String,ArrayList<String>>> tree, ArrayList<String> texto){
         StringBuilder mientras = new StringBuilder();
         String traduccion = " ";
+        boolean found = false;
         if(O.equals("1")){
             if(T.equals("1")){
                 for(int i = 0; i < texto.size() ; i++){
@@ -52,39 +53,40 @@ public class Controller{
             }
             else if (T.equals("2")){
                 for(int i = 0; i < texto.size() ; i++){
+                    found = false;
                     for (Association<String, ArrayList<String>> info : tree){
                         if(info.getKey().equals(texto.get(i))){
                             mientras.append(info.getValue().get(0));
                             mientras.append(" ");
+                            found = true;
                             break;
                         }
-                        else{
-                            mientras.append("*");
-                            mientras.append(texto.get(i));
-                            mientras.append("*");
-                            mientras.append(" ");
-                            break;
-
-                        }
+                    }
+                    if(found == false){
+                        mientras.append("*");
+                        mientras.append(texto.get(i));
+                        mientras.append("*");
+                        mientras.append(" ");      
                     }
                 }
                 traduccion = mientras.toString();
             }
             else if (T.equals("3")){
                 for(int i = 0; i < texto.size() ; i++){
+                    found = false;
                     for (Association<String, ArrayList<String>> info : tree){
                         if(info.getKey().equals(texto.get(i))){
                             mientras.append(info.getValue().get(1));
                             mientras.append(" ");
+                            found = true;
                             break;
                         }
-                        else{
-                            mientras.append("*");
-                            mientras.append(texto.get(i));
-                            mientras.append("*");
-                            mientras.append(" ");
-                            break;
-                        }
+                    }
+                    if(found == false){
+                        mientras.append("*");
+                        mientras.append(texto.get(i));
+                        mientras.append("*");
+                        mientras.append(" ");      
                     }
                 }
                 traduccion = mientras.toString();
@@ -93,19 +95,20 @@ public class Controller{
         else if (O.equals("2")){
             if(T.equals("1")){
                 for(int i = 0; i < texto.size() ; i++){
+                    found = false;
                     for (Association<String, ArrayList<String>> info : tree){
                         if(info.getValue().get(0).equals(texto.get(i))){
                             mientras.append(info.getKey());
                             mientras.append(" ");
+                            found = true;
                             break;
                         }
-                        else{
-                            mientras.append("*");
-                            mientras.append(texto.get(i));
-                            mientras.append("*");
-                            mientras.append(" ");
-                            break;
-                        }
+                    }
+                    if(found == false){
+                        mientras.append("*");
+                        mientras.append(texto.get(i));
+                        mientras.append("*");
+                        mientras.append(" ");      
                     }
                 }
             }
@@ -119,19 +122,20 @@ public class Controller{
             }
             else if (T.equals("3")){
                 for(int i = 0; i < texto.size() ; i++){
+                    found = false;
                     for (Association<String, ArrayList<String>> info : tree){
                         if(info.getValue().get(0).equals(texto.get(i))){
                             mientras.append(info.getValue().get(1));
                             mientras.append(" ");
+                            found = true;
                             break;
                         }
-                        else{
-                            mientras.append("*");
-                            mientras.append(texto.get(i));
-                            mientras.append("*");
-                            mientras.append(" ");
-                            break;
-                        }
+                    }
+                    if(found == false){
+                        mientras.append("*");
+                        mientras.append(texto.get(i));
+                        mientras.append("*");
+                        mientras.append(" ");      
                     }
                 }
             }
@@ -139,37 +143,39 @@ public class Controller{
         else if (O.equals("3")){
             if(T.equals("1")){
                 for(int i = 0; i < texto.size() ; i++){
+                    found = false;
                     for (Association<String, ArrayList<String>> info : tree){
                         if(info.getValue().get(1).equals(texto.get(i))){
                             mientras.append(info.getKey());
                             mientras.append(" ");
+                            found = true;
                             break;
                         }
-                        else{
-                            mientras.append("*");
-                            mientras.append(texto.get(i));
-                            mientras.append("*");
-                            mientras.append(" ");
-                            break;
-                        }
+                    }
+                    if(found == false){
+                        mientras.append("*");
+                        mientras.append(texto.get(i));
+                        mientras.append("*");
+                        mientras.append(" ");      
                     }
                 }
             }
             else if (T.equals("2")){
                 for(int i = 0; i < texto.size() ; i++){
+                    found = false;
                     for (Association<String, ArrayList<String>> info : tree){
                         if(info.getValue().get(1).equals(texto.get(i))){
                             mientras.append(info.getValue().get(0));
                             mientras.append(" ");
+                            found = true;
                             break;
                         }
-                        else{
-                            mientras.append("*");
-                            mientras.append(texto.get(i));
-                            mientras.append("*");
-                            mientras.append(" ");
-                            break;
-                        }
+                    }
+                    if(found == false){
+                        mientras.append("*");
+                        mientras.append(texto.get(i));
+                        mientras.append("*");
+                        mientras.append(" ");      
                     }
                 }
             }
