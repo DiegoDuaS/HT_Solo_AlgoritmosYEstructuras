@@ -27,7 +27,6 @@ public class Association<K extends Comparable<K>, V> implements Comparable<Assoc
         this.value = value;
     }
 
-    @Override
     public int compareTo(Association<K, V> other) {
         return this.key.compareTo(other.key);
     }
