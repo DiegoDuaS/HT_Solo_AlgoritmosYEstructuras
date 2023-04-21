@@ -1,5 +1,9 @@
-public interface Map<K, V> {
+/**
+ * @author: Diego Duarte
+ * 
+ * @since:20/04/2023
+ **/
+public interface Map<K extends Comparable<K>, V> {
     void insert(K key, V value);
-    void delete(K key);
-    V find(K key);
+    V search(K key);
 }
