@@ -12,6 +12,8 @@ public class Main {
      * @throws FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException { 
+        Controller con = new Controller();
+        con.work();
     }
 }
     

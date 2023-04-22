@@ -15,7 +15,6 @@ dog;perro
 yellow;amarillo
 red;rojo
 blue;azul
-brown;dog
+brown;cafe
 hamburger;hamburgesa
 eats;come
-
